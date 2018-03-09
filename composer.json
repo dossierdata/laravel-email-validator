@@ -1,0 +1,31 @@
+{
+  "name": "dossierdata/laravel-email-validator",
+  "description": "Reader for csv files",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Lucas van der Have",
+      "email": "lucas@dossierdata.nl"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "egulias/email-validator": "~2.1",
+    "mika56/spfcheck": "^1.0",
+    "laravel/laravel": "^5.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dossierdata\\LaravelEmailValidator\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Dossierdata\\LaravelEmailValidator\\Tests\\": "tests"
+    }
+  }
+}
