@@ -4,7 +4,6 @@ namespace Dossierdata\LaravelEmailValidator\Interfaces;
 
 interface Rule
 {
-
     /**
      * Determine if the validation rule passes.
      *

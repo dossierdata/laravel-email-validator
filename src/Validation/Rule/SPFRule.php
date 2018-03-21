@@ -17,7 +17,7 @@ class SPFRule extends Rule
      * @var array|string[]
      */
     protected $prerequisiteRules = [
-        'rfc'
+        'rfc',
     ];
     /**
      * @var DNSRecordGetter
@@ -50,13 +50,13 @@ class SPFRule extends Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param  string $attribute
-     * @param  mixed $value
+     * @param string $attribute
+     * @param mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)
     {
-        $parts = $this->emailParser->parse((string)$value);
+        $parts = $this->emailParser->parse((string) $value);
 
         if (!isset($parts['domain'])) {
             $this->error = sprintf('Could not parse the domain from "%s" while trying to validate SPF', $value);

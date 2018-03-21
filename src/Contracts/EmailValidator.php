@@ -6,7 +6,6 @@ use Dossierdata\LaravelEmailValidator\Interfaces\Validator;
 
 interface EmailValidator extends Validator
 {
-
     /**
      * Get all errors.
      *

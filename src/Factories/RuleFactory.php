@@ -8,7 +8,6 @@ use Illuminate\Contracts\Container\Container;
 
 class RuleFactory implements \Dossierdata\LaravelEmailValidator\Contracts\RuleFactory
 {
-
     /**
      * @var Container
      */

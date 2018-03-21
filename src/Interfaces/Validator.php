@@ -10,6 +10,7 @@ interface Validator
     /**
      * @param mixed $value
      * @param array $rules
+     *
      * @return mixed
      */
     public function validateValue($value, array $rules);
@@ -19,6 +20,7 @@ interface Validator
      * @param mixed             $value
      * @param array             $parameters
      * @param ValidatorContract $validator
+     *
      * @return mixed
      */
     public function validate($attribute, $value, array $parameters, ValidatorContract $validator = null);

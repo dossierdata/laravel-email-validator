@@ -10,7 +10,7 @@ class ValidatorTest extends TestCase
 
     /**
      * Data provider for testRFCValidation variables are in the order of
-     * $email, $rule, $expected, $errors
+     * $email, $rule, $expected, $errors.
      *
      * @return array
      */
@@ -20,79 +20,79 @@ class ValidatorTest extends TestCase
             [
                 'rfc_valid@email.com',
                 [
-                    'rfc'
+                    'rfc',
                 ],
                 true,
             ],
             [
                 'nodomainpart.com',
                 [
-                    'rfc'
+                    'rfc',
                 ],
                 false,
                 [
-                    'No Domain part'
+                    'No Domain part',
                 ],
             ],
             [
                 '@nodomainpart.com',
                 [
-                    'rfc'
+                    'rfc',
                 ],
                 false,
                 [
-                    'No local part'
+                    'No local part',
                 ],
             ],
             [
                 '.rfc_invalid@email.com',
                 [
-                    'rfc'
+                    'rfc',
                 ],
                 false,
                 [
-                    'Found DOT at start'
+                    'Found DOT at start',
                 ],
             ],
             [
                 'rfc_invalid@email.com.',
                 [
-                    'rfc'
+                    'rfc',
                 ],
                 false,
                 [
-                    'Dot at the end'
+                    'Dot at the end',
                 ],
             ],
             [
                 '.rfc_invalid_prerequisite_rule@email.com',
                 [
-                    'spf:127.0.0.1'
+                    'spf:127.0.0.1',
                 ],
                 false,
                 [
                     'Found DOT at start',
-                    'Unknown SPF validation error'
+                    'Unknown SPF validation error',
                 ],
             ],
             [
                 'my@email.com',
                 [
-                    'spf:127.0.0.1'
+                    'spf:127.0.0.1',
                 ],
                 false,
                 [
-                    'SPF configured incorrectly for "127.0.0.1", spam filters will block mail from this account'
+                    'SPF configured incorrectly for "127.0.0.1", spam filters will block mail from this account',
                 ],
             ],
             [
                 'spf_not_configured@google.com',
                 [
-                    'spf:127.0.0.1'
+                    'spf:127.0.0.1',
                 ],
                 false,
                 [
-                    'SPF has not been configured (correctly) for "127.0.0.1", spam filters will most likely block mail from this account'
+                    'SPF has not been configured (correctly) for "127.0.0.1", spam filters will most likely block mail from this account',
                 ],
             ],
             [
@@ -102,7 +102,7 @@ class ValidatorTest extends TestCase
                 ],
                 false,
                 [
-                    'No MX or A DSN record was found for this email'
+                    'No MX or A DSN record was found for this email',
                 ],
             ],
             [
@@ -117,10 +117,12 @@ class ValidatorTest extends TestCase
 
     /**
      * Test that the CSVReader can handle reading a simple row with only strings and numbers no enclosures.
+     *
      * @param $email
      * @param array $rules
      * @param $expected
      * @param array $errors
+     *
      * @return void
      *
      * @dataProvider rfcValidationProvider

@@ -33,8 +33,9 @@ abstract class Rule implements \Dossierdata\LaravelEmailValidator\Interfaces\Rul
     }
 
     /**
-     * @return array|Rule[]
      * @throws \Dossierdata\LaravelEmailValidator\Exceptions\InvalidValidationRuleException
+     *
+     * @return array|Rule[]
      */
     public function getPrerequisiteRules()
     {

@@ -16,7 +16,7 @@ abstract class TestCase extends BaseTestCase
     public function createApplication()
     {
         $app = new \Illuminate\Foundation\Application(
-            realpath(__DIR__ . '/../src/')
+            realpath(__DIR__.'/../src/')
         );
 
         $app->singleton(

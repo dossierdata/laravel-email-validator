@@ -7,7 +7,6 @@ use Dossierdata\LaravelEmailValidator\Interfaces\Rule;
 
 interface RuleFactory
 {
-
     /**
      * @param $tag
      *

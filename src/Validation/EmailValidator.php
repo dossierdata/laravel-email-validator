@@ -9,7 +9,6 @@ use Illuminate\Contracts\Validation\Validator;
 
 class EmailValidator implements \Dossierdata\LaravelEmailValidator\Contracts\EmailValidator
 {
-
     /**
      * @var array|string[]
      */
@@ -21,13 +20,13 @@ class EmailValidator implements \Dossierdata\LaravelEmailValidator\Contracts\Ema
 
     /**
      * EmailValidator constructor.
+     *
      * @param RuleFactory $ruleFactory
      */
     public function __construct(RuleFactory $ruleFactory)
     {
         $this->ruleFactory = $ruleFactory;
     }
-
 
     /**
      * Validate all rules supplied in the parameters, if no rules are supplied in
@@ -59,9 +58,9 @@ class EmailValidator implements \Dossierdata\LaravelEmailValidator\Contracts\Ema
      * Validate all rules supplied in the parameters, if no rules are supplied in
      * the parameters the default behaviour is to check only RFC validation.
      *
-     * @param string $attribute
-     * @param mixed $value
-     * @param array $parameters
+     * @param string         $attribute
+     * @param mixed          $value
+     * @param array          $parameters
      * @param Validator|null $validator
      *
      * @throws InvalidValidationRuleException
@@ -103,12 +102,14 @@ class EmailValidator implements \Dossierdata\LaravelEmailValidator\Contracts\Ema
         foreach ($rulesToCheck as $ruleToCheck) {
             if (!$this->checkRule($value, $ruleToCheck, $checkedRules, $attribute, $validator)) {
                 $this->addRuleErrorsToValidator($rule, $attribute, $validator);
+
                 return false;
             }
         }
 
         if (!$rule->passes($attribute, $value)) {
             $this->addRuleErrorsToValidator($rule, $attribute, $validator);
+
             return false;
         }
 
