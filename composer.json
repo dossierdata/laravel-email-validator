@@ -1,6 +1,6 @@
 {
   "name": "dossierdata/laravel-email-validator",
-  "description": "Reader for csv files",
+  "description": "A more extensive email validator rule than the default provided by Laravel.",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -9,6 +9,7 @@
       "email": "lucas@dossierdata.nl"
     }
   ],
+  "prefer-stable": true,
   "minimum-stability": "dev",
   "require": {
     "egulias/email-validator": "~2.1",

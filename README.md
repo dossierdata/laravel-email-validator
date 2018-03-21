@@ -5,7 +5,7 @@ Laravel Email Validator
 [![Latest Stable Version](https://poser.pugx.org/dossierdata/laravel-email-validator/v/stable?format=flat-square)](https://packagist.org/packages/dossierdata/laravel-email-validator)
 [![Build Status](https://travis-ci.org/dossierdata/laravel-email-validator.svg?branch=master)](https://travis-ci.org/dossierdata/laravel-email-validator)
 [![Total Downloads](https://poser.pugx.org/dossierdata/laravel-email-validator/downloads?format=flat-square)](https://packagist.org/packages/dossierdata/laravel-email-validator)
-<!--[![StyleCI](https://styleci.io/repos/99249783/shield)](https://styleci.io/repos/99249783)-->
+[![StyleCI](https://styleci.io/repos/99249783/shield)](https://styleci.io/repos/99249783)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 The Laravel Email Validator extends the Laravel Validator with the `validate_email` rule.
