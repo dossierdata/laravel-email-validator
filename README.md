@@ -20,7 +20,7 @@ To install the latest version of Laravel Email Validator, run the command below:
 composer require dossierdata/laravel-email-validator
 ```
 
-Then add the register the service provider in `config/app.php`:
+Then register the service provider in `config/app.php`:
 
 ```
 'providers' => [
