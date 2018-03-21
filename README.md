@@ -12,6 +12,15 @@ To install the latest version of Laravel Email Validator, run the command below:
 composer require dossierdata/laravel-email-validator
 ```
 
+Then add the register the service provider in `config/app.php`:
+
+```
+'providers' => [
+    ...
+    Dossierdata\LaravelEmailValidator\ServiceProvider::class,
+],
+```
+
 ## Requirements
 
 * Laravel 5.0 and up
@@ -72,5 +81,8 @@ if (!$emailValidator->validateValue('.incorrect@email.nodomain', $rules)) {
 }
 ```
 
+### Contributing
+See the [CONTRIBUTING](.github/CONTRIBUTING.md) guidelines for this project.
+
 ### License
-The dossierdata/laravel-email-validator is open-sourced software licensed under the [MIT license](LICENSE)
+The dossierdata/laravel-email-validator is open-sourced software licensed under the [MIT license](LICENSE).
