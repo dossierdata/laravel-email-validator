@@ -6,7 +6,6 @@ use Illuminate\Contracts\Validation\Validator as ValidatorContract;
 
 interface Validator
 {
-
     /**
      * @param mixed $value
      * @param array $rules

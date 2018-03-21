@@ -6,7 +6,6 @@ use Dossierdata\LaravelEmailValidator\Contracts\RuleFactory;
 
 abstract class Rule implements \Dossierdata\LaravelEmailValidator\Interfaces\Rule
 {
-
     /**
      * @var string|null
      */

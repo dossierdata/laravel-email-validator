@@ -8,7 +8,6 @@ use Mika56\SPFCheck\SPFCheck;
 
 class SPFRule extends Rule
 {
-
     /**
      * @var string|null
      */
@@ -52,6 +51,7 @@ class SPFRule extends Rule
      *
      * @param string $attribute
      * @param mixed  $value
+     *
      * @return bool
      */
     public function passes($attribute, $value)

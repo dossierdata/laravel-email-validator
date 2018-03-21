@@ -7,7 +7,6 @@ use Dossierdata\LaravelEmailValidator\Tests\TestCase;
 
 class ValidatorTest extends TestCase
 {
-
     /**
      * Data provider for testRFCValidation variables are in the order of
      * $email, $rule, $expected, $errors.
@@ -123,7 +122,6 @@ class ValidatorTest extends TestCase
      * @param $expected
      * @param array $errors
      *
-     * @return void
      *
      * @dataProvider rfcValidationProvider
      */
