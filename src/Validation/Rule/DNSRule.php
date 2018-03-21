@@ -7,7 +7,6 @@ use Egulias\EmailValidator\Validation\DNSCheckValidation;
 
 class DNSRule extends Rule
 {
-
     /**
      * @var string|null
      */
@@ -27,6 +26,7 @@ class DNSRule extends Rule
      *
      * @param string $attribute
      * @param mixed  $value
+     *
      * @return bool
      */
     public function passes($attribute, $value)

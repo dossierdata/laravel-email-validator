@@ -7,7 +7,6 @@ use Egulias\EmailValidator\Validation\NoRFCWarningsValidation;
 
 class RFCWithWarningsRule extends Rule
 {
-
     /**
      * @var string|null
      */
@@ -27,6 +26,7 @@ class RFCWithWarningsRule extends Rule
      *
      * @param string $attribute
      * @param mixed  $value
+     *
      * @return bool
      */
     public function passes($attribute, $value)
