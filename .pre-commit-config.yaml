@@ -1,0 +1,7 @@
+- repo: https://github.com/borisbabic/pre-commit-php
+  sha: 2.0.1
+  hooks:
+  - id: php-lint
+  - id: php-cs
+    args: [--standard=phpcs.xml, '--ignore=/Migrations/,/Seeders/,/Routes/,/Helpers/,/database/']
+  - id: php-cs-fixer
