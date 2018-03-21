@@ -1,4 +1,6 @@
-<?php namespace Dossierdata\LaravelEmailValidator\Validation;
+<?php
+
+namespace Dossierdata\LaravelEmailValidator\Validation;
 
 use Dossierdata\LaravelEmailValidator\Contracts\RuleFactory;
 use Dossierdata\LaravelEmailValidator\Exceptions\InvalidValidationRuleException;
@@ -33,8 +35,10 @@ class EmailValidator implements \Dossierdata\LaravelEmailValidator\Contracts\Ema
      *
      * @param mixed $value
      * @param array $rules
-     * @return mixed
+     *
      * @throws InvalidValidationRuleException
+     *
+     * @return mixed
      */
     public function validateValue($value, array $rules)
     {
@@ -59,8 +63,10 @@ class EmailValidator implements \Dossierdata\LaravelEmailValidator\Contracts\Ema
      * @param mixed $value
      * @param array $parameters
      * @param Validator|null $validator
-     * @return mixed
+     *
      * @throws InvalidValidationRuleException
+     *
+     * @return mixed
      */
     public function validate($attribute, $value, array $parameters = ['rfc'], Validator $validator = null)
     {
@@ -86,6 +92,7 @@ class EmailValidator implements \Dossierdata\LaravelEmailValidator\Contracts\Ema
      * @param Rule $rule
      * @param $checkedRules
      * @param Validator|null $validator
+     *
      * @return bool
      */
     protected function checkRule($value, Rule $rule, &$checkedRules, $attribute = null, Validator $validator = null)
@@ -123,6 +130,7 @@ class EmailValidator implements \Dossierdata\LaravelEmailValidator\Contracts\Ema
      *
      * @param $prerequisiteRules
      * @param $checkedRules
+     *
      * @return array
      */
     protected function getRulesToCheckBeforehand($prerequisiteRules, $checkedRules)
@@ -131,7 +139,7 @@ class EmailValidator implements \Dossierdata\LaravelEmailValidator\Contracts\Ema
     }
 
     /**
-     * Get all errors
+     * Get all errors.
      *
      * @return array|string[]
      */
@@ -139,5 +147,4 @@ class EmailValidator implements \Dossierdata\LaravelEmailValidator\Contracts\Ema
     {
         return $this->errors;
     }
-
 }

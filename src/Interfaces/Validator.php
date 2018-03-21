@@ -1,4 +1,6 @@
-<?php namespace Dossierdata\LaravelEmailValidator\Interfaces;
+<?php
+
+namespace Dossierdata\LaravelEmailValidator\Interfaces;
 
 use Illuminate\Contracts\Validation\Validator as ValidatorContract;
 
@@ -13,12 +15,11 @@ interface Validator
     public function validateValue($value, array $rules);
 
     /**
-     * @param string $attribute
-     * @param mixed $value
-     * @param array $parameters
+     * @param string            $attribute
+     * @param mixed             $value
+     * @param array             $parameters
      * @param ValidatorContract $validator
      * @return mixed
      */
     public function validate($attribute, $value, array $parameters, ValidatorContract $validator = null);
-
 }

@@ -3,5 +3,5 @@
   hooks:
   - id: php-lint
   - id: php-cs
-    args: [--standard=phpcs.xml, '--ignore=/Migrations/,/Seeders/,/Routes/,/Helpers/,/database/']
+    args: [--standard=phpcs.xml, '--ignore=/Folder/']
   - id: php-cs-fixer

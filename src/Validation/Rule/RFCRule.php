@@ -1,4 +1,6 @@
-<?php namespace Dossierdata\LaravelEmailValidator\Validation\Rule;
+<?php
+
+namespace Dossierdata\LaravelEmailValidator\Validation\Rule;
 
 use Egulias\EmailValidator\EmailValidator;
 use Egulias\EmailValidator\Validation\RFCValidation;

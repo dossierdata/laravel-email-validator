@@ -1,4 +1,6 @@
-<?php namespace Dossierdata\LaravelEmailValidator\Validation\Rule;
+<?php
+
+namespace Dossierdata\LaravelEmailValidator\Validation\Rule;
 
 use Egulias\EmailValidator\EmailParser;
 use Mika56\SPFCheck\DNSRecordGetter;
@@ -79,15 +81,21 @@ class SPFRule extends Rule
 
         switch ($this->result) {
             case SPFCheck::RESULT_FAIL:
-                return sprintf('SPF configured incorrectly for "%s", spam filters will block mail from this account',
-                    $this->options);
+                return sprintf(
+                    'SPF configured incorrectly for "%s", spam filters will block mail from this account',
+                    $this->options
+                );
             case SPFCheck::RESULT_SOFTFAIL:
-                return sprintf('SPF has not been configured (correctly) for "%s", spam filters will most likely block mail from this account',
-                    $this->options);
+                return sprintf(
+                    'SPF has not been configured (correctly) for "%s", spam filters will most likely block mail from this account',
+                    $this->options
+                );
             case SPFCheck::RESULT_NEUTRAL:
             case SPFCheck::RESULT_NONE:
-                return sprintf('It is unknown whether SPF is configured correctly for "%s", spam filter might block mail from this account',
-                    $this->options);
+                return sprintf(
+                    'It is unknown whether SPF is configured correctly for "%s", spam filter might block mail from this account',
+                    $this->options
+                );
             case SPFCheck::RESULT_PERMERROR:
             case SPFCheck::RESULT_TEMPERROR:
             case SPFCheck::RESULT_DEFINITIVE_PERMERROR:

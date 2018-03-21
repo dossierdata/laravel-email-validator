@@ -1,4 +1,6 @@
-<?php namespace Dossierdata\LaravelEmailValidator\Factories;
+<?php
+
+namespace Dossierdata\LaravelEmailValidator\Factories;
 
 use Dossierdata\LaravelEmailValidator\Exceptions\InvalidValidationRuleException;
 use Dossierdata\LaravelEmailValidator\Interfaces\Rule;
@@ -19,8 +21,10 @@ class RuleFactory implements \Dossierdata\LaravelEmailValidator\Contracts\RuleFa
 
     /**
      * @param $tag
-     * @return Rule
+     *
      * @throws InvalidValidationRuleException
+     *
+     * @return Rule
      */
     public function createByTag($tag)
     {
@@ -40,8 +44,10 @@ class RuleFactory implements \Dossierdata\LaravelEmailValidator\Contracts\RuleFa
 
     /**
      * @param $parameter
-     * @return Rule
+     *
      * @throws InvalidValidationRuleException
+     *
+     * @return Rule
      */
     public function createByParameter($parameter)
     {

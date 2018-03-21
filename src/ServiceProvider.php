@@ -1,4 +1,6 @@
-<?php namespace Dossierdata\LaravelEmailValidator;
+<?php
+
+namespace Dossierdata\LaravelEmailValidator;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
@@ -24,18 +26,30 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(\Dossierdata\LaravelEmailValidator\Contracts\RuleFactory::class,
-            \Dossierdata\LaravelEmailValidator\Factories\RuleFactory::class);
-        $this->app->bind(\Dossierdata\LaravelEmailValidator\Contracts\EmailValidator::class,
-            \Dossierdata\LaravelEmailValidator\Validation\EmailValidator::class);
-        $this->app->bind('dossierdata.email.rule.rfc',
-            \Dossierdata\LaravelEmailValidator\Validation\Rule\RFCRule::class);
-        $this->app->bind('dossierdata.email.rule.rfc_no_warnings',
-            \Dossierdata\LaravelEmailValidator\Validation\Rule\RFCRule::class);
-        $this->app->bind('dossierdata.email.rule.spf',
-            \Dossierdata\LaravelEmailValidator\Validation\Rule\SPFRule::class);
-        $this->app->bind('dossierdata.email.rule.dns',
-            \Dossierdata\LaravelEmailValidator\Validation\Rule\DNSRule::class);
+        $this->app->singleton(
+            \Dossierdata\LaravelEmailValidator\Contracts\RuleFactory::class,
+            \Dossierdata\LaravelEmailValidator\Factories\RuleFactory::class
+        );
+        $this->app->bind(
+            \Dossierdata\LaravelEmailValidator\Contracts\EmailValidator::class,
+            \Dossierdata\LaravelEmailValidator\Validation\EmailValidator::class
+        );
+        $this->app->bind(
+            'dossierdata.email.rule.rfc',
+            \Dossierdata\LaravelEmailValidator\Validation\Rule\RFCRule::class
+        );
+        $this->app->bind(
+            'dossierdata.email.rule.rfc_no_warnings',
+            \Dossierdata\LaravelEmailValidator\Validation\Rule\RFCRule::class
+        );
+        $this->app->bind(
+            'dossierdata.email.rule.spf',
+            \Dossierdata\LaravelEmailValidator\Validation\Rule\SPFRule::class
+        );
+        $this->app->bind(
+            'dossierdata.email.rule.dns',
+            \Dossierdata\LaravelEmailValidator\Validation\Rule\DNSRule::class
+        );
 
         $this->app->tag('dossierdata.email.rules', [
             'dossierdata.email.rule.rfc',

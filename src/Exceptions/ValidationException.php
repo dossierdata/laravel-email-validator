@@ -1,4 +1,6 @@
-<?php namespace Dossierdata\LaravelEmailValidator\Exceptions;
+<?php
+
+namespace Dossierdata\LaravelEmailValidator\Exceptions;
 
 class ValidationException extends \Illuminate\Validation\ValidationException
 {
@@ -7,7 +9,5 @@ class ValidationException extends \Illuminate\Validation\ValidationException
         $response = null
     ) {
         parent::__construct($validator, $response);
-
-        $this->code = $code;
     }
 }

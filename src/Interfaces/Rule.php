@@ -1,4 +1,6 @@
-<?php namespace Dossierdata\LaravelEmailValidator\Interfaces;
+<?php
+
+namespace Dossierdata\LaravelEmailValidator\Interfaces;
 
 interface Rule
 {
@@ -6,8 +8,9 @@ interface Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param  string $attribute
-     * @param  mixed $value
+     * @param string $attribute
+     * @param mixed  $value
+     *
      * @return bool
      */
     public function passes($attribute, $value);
@@ -28,5 +31,4 @@ interface Rule
      * @param array|string[]
      */
     public function getPrerequisiteRules();
-
 }

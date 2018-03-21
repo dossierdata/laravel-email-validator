@@ -1,4 +1,6 @@
-<?php namespace Dossierdata\LaravelEmailValidator\Validation\Rule;
+<?php
+
+namespace Dossierdata\LaravelEmailValidator\Validation\Rule;
 
 use Dossierdata\LaravelEmailValidator\Contracts\RuleFactory;
 
@@ -60,5 +62,4 @@ abstract class Rule implements \Dossierdata\LaravelEmailValidator\Interfaces\Rul
     {
         return $this->tag;
     }
-
 }

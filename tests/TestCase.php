@@ -1,4 +1,6 @@
-<?php namespace Dossierdata\LaravelEmailValidator\Tests;
+<?php
+
+namespace Dossierdata\LaravelEmailValidator\Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 

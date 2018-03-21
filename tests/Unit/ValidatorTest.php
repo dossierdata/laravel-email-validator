@@ -1,4 +1,6 @@
-<?php namespace Dossierdata\LaravelEmailValidator\Tests\Unit;
+<?php
+
+namespace Dossierdata\LaravelEmailValidator\Tests\Unit;
 
 use Dossierdata\LaravelEmailValidator\Contracts\EmailValidator;
 use Dossierdata\LaravelEmailValidator\Tests\TestCase;
@@ -7,16 +9,7 @@ class ValidatorTest extends TestCase
 {
 
     /**
-     * @return EmailValidator
-     */
-    private function getEmailValidator()
-    {
-        return $this->app->make(EmailValidator::class);
-    }
-
-    /**
-     * Data provider for testRFCValidation
-     * variables are in the order of
+     * Data provider for testRFCValidation variables are in the order of
      * $email, $rule, $expected, $errors
      *
      * @return array
@@ -140,4 +133,11 @@ class ValidatorTest extends TestCase
         $this->assertEquals($errors, $validator->errors());
     }
 
+    /**
+     * @return EmailValidator
+     */
+    private function getEmailValidator()
+    {
+        return $this->app->make(EmailValidator::class);
+    }
 }
