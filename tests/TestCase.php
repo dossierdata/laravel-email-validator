@@ -31,7 +31,7 @@ abstract class TestCase extends BaseTestCase
             'Illuminate\Contracts\Debug\ExceptionHandler',
             'App\Exceptions\Handler'
         );
-        
+
         $app->register(\Dossierdata\LaravelEmailValidator\ServiceProvider::class);
 
         return $app;
