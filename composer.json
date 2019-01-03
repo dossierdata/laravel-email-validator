@@ -13,7 +13,7 @@
   "minimum-stability": "dev",
   "require": {
     "egulias/email-validator": "~2.1",
-    "mika56/spfcheck": "^1.0",
+    "mika56/spfcheck": "*",
     "laravel/laravel": "^5.0"
   },
   "require-dev": {
