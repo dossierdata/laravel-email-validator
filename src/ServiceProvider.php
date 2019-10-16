@@ -2,7 +2,9 @@
 
 namespace Dossierdata\LaravelEmailValidator;
 
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+use Illuminate\Contracts\Support\DeferrableProvider;
+
+class ServiceProvider extends \Illuminate\Support\ServiceProvider implements DeferrableProvider
 {
     /**
      * Bootstrap the application services.
@@ -53,5 +55,23 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             'dossierdata.email.rule.spf',
             'dossierdata.email.rule.dns',
         ]);
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [
+            \Dossierdata\LaravelEmailValidator\Contracts\RuleFactory::class,
+            \Dossierdata\LaravelEmailValidator\Contracts\EmailValidator::class,
+            'dossierdata.email.rule.rfc',
+            'dossierdata.email.rule.rfc_no_warnings',
+            'dossierdata.email.rule.spf',
+            'dossierdata.email.rule.dns',
+            'dossierdata.email.rules'
+        ];
     }
 }
