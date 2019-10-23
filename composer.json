@@ -31,5 +31,13 @@
     "psr-4": {
       "Dossierdata\\LaravelEmailValidator\\Tests\\": "tests"
     }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Dossierdata\\LaravelEmailValidator\\ServiceProvider",
+        "Dossierdata\\LaravelEmailValidator\\BootServiceProvider"
+      ]
+    }
   }
 }

@@ -7,19 +7,6 @@ use Illuminate\Contracts\Support\DeferrableProvider;
 class ServiceProvider extends \Illuminate\Support\ServiceProvider implements DeferrableProvider
 {
     /**
-     * Bootstrap the application services.
-     */
-    public function boot()
-    {
-        $this->registerValidationRules($this->app['validator']);
-    }
-
-    protected function registerValidationRules(\Illuminate\Contracts\Validation\Factory $validator)
-    {
-        $validator->extend('email_validator', 'Dossierdata\LaravelEmailValidator\Validation\EmailValidator@validate');
-    }
-
-    /**
      * Register the application services.
      */
     public function register()

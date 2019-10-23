@@ -26,6 +26,7 @@ Then register the service provider in `config/app.php`:
 'providers' => [
     ...
     Dossierdata\LaravelEmailValidator\ServiceProvider::class,
+    Dossierdata\LaravelEmailValidator\BootServiceProvider::class,
 ],
 ```
 
