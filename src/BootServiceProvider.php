@@ -2,7 +2,7 @@
 
 namespace Dossierdata\LaravelEmailValidator;
 
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+class BootServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
      * Bootstrap the application services.
