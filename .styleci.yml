@@ -34,7 +34,6 @@ enabled:
   - no_trailing_comma_in_list_call
   - no_trailing_comma_in_singleline_array
   - no_unneeded_control_parentheses
-  - no_unreachable_default_argument_value
   - no_unused_imports
   - no_useless_return
   - no_whitespace_before_comma_in_array
@@ -59,7 +58,6 @@ enabled:
   - phpdoc_types
   - phpdoc_var_without_name
   - print_to_echo
-  - self_accessor
   - short_array_syntax
   - short_scalar_cast
   - single_blank_line_before_namespace

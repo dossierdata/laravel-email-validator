@@ -58,7 +58,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider implements Def
             'dossierdata.email.rule.rfc_no_warnings',
             'dossierdata.email.rule.spf',
             'dossierdata.email.rule.dns',
-            'dossierdata.email.rules'
+            'dossierdata.email.rules',
         ];
     }
 }
