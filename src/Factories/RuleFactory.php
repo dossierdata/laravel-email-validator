@@ -36,9 +36,7 @@ class RuleFactory implements \Dossierdata\LaravelEmailValidator\Contracts\RuleFa
         }
 
         /** @var Rule $rule */
-        $rule = $this->container->make($tag);
-
-        return $rule;
+        return $this->container->make($tag);
     }
 
     /**
@@ -51,7 +49,7 @@ class RuleFactory implements \Dossierdata\LaravelEmailValidator\Contracts\RuleFa
     public function createByParameter($parameter)
     {
         if (str_contains($parameter, ':')) {
-            list($tag, $options) = explode(':', $parameter);
+            [$tag, $options] = explode(':', $parameter);
         } else {
             $tag = $parameter;
         }

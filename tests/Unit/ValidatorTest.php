@@ -5,6 +5,10 @@ namespace Dossierdata\LaravelEmailValidator\Tests\Unit;
 use Dossierdata\LaravelEmailValidator\Contracts\EmailValidator;
 use Dossierdata\LaravelEmailValidator\Tests\TestCase;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class ValidatorTest extends TestCase
 {
     /**
@@ -118,10 +122,7 @@ class ValidatorTest extends TestCase
      * Test that the CSVReader can handle reading a simple row with only strings and numbers no enclosures.
      *
      * @param $email
-     * @param array $rules
      * @param $expected
-     * @param array $errors
-     *
      *
      * @dataProvider rfcValidationProvider
      */
@@ -129,8 +130,8 @@ class ValidatorTest extends TestCase
     {
         $validator = $this->getEmailValidator();
 
-        $this->assertEquals($expected, $validator->validateValue($email, $rules));
-        $this->assertEquals($errors, $validator->errors());
+        self::assertEquals($expected, $validator->validateValue($email, $rules));
+        self::assertEquals($errors, $validator->errors());
     }
 
     /**

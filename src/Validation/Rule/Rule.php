@@ -9,15 +9,15 @@ abstract class Rule implements \Dossierdata\LaravelEmailValidator\Interfaces\Rul
     /**
      * @var string|null
      */
-    protected $tag = null;
+    protected $tag;
     /**
      * @var string|null
      */
-    protected $ruleFactory = null;
+    protected $ruleFactory;
     /**
      * @var string|null
      */
-    protected $options = null;
+    protected $options;
     /**
      * @var array|string[]
      */

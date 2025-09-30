@@ -20,8 +20,6 @@ class EmailValidator implements \Dossierdata\LaravelEmailValidator\Contracts\Ema
 
     /**
      * EmailValidator constructor.
-     *
-     * @param RuleFactory $ruleFactory
      */
     public function __construct(RuleFactory $ruleFactory)
     {
@@ -32,12 +30,7 @@ class EmailValidator implements \Dossierdata\LaravelEmailValidator\Contracts\Ema
      * Validate all rules supplied in the parameters, if no rules are supplied in
      * the parameters the default behaviour is to check only RFC validation.
      *
-     * @param mixed $value
-     * @param array $rules
-     *
      * @throws InvalidValidationRuleException
-     *
-     * @return mixed
      */
     public function validateValue($value, array $rules)
     {
@@ -58,14 +51,9 @@ class EmailValidator implements \Dossierdata\LaravelEmailValidator\Contracts\Ema
      * Validate all rules supplied in the parameters, if no rules are supplied in
      * the parameters the default behaviour is to check only RFC validation.
      *
-     * @param string         $attribute
-     * @param mixed          $value
-     * @param array          $parameters
-     * @param Validator|null $validator
+     * @param string $attribute
      *
      * @throws InvalidValidationRuleException
-     *
-     * @return mixed
      */
     public function validate($attribute, $value, array $parameters = ['rfc'], Validator $validator = null)
     {
@@ -88,16 +76,14 @@ class EmailValidator implements \Dossierdata\LaravelEmailValidator\Contracts\Ema
      *
      * @param $attribute
      * @param $value
-     * @param Rule $rule
      * @param $checkedRules
-     * @param Validator|null $validator
      *
      * @return bool
      */
     protected function checkRule($value, Rule $rule, &$checkedRules, $attribute = null, Validator $validator = null)
     {
         $prerequisiteRules = $rule->getPrerequisiteRules();
-        $rulesToCheck = $this->getRulesToCheckBeforehand($prerequisiteRules, $checkedRules);
+        $rulesToCheck      = $this->getRulesToCheckBeforehand($prerequisiteRules, $checkedRules);
 
         foreach ($rulesToCheck as $ruleToCheck) {
             if (!$this->checkRule($value, $ruleToCheck, $checkedRules, $attribute, $validator)) {
@@ -120,7 +106,7 @@ class EmailValidator implements \Dossierdata\LaravelEmailValidator\Contracts\Ema
     {
         $this->errors[] = $rule->message();
 
-        if (isset($validator) && isset($attribute)) {
+        if (isset($validator, $attribute)) {
             $validator->errors()->add($attribute, $rule->message());
         }
     }

@@ -29,11 +29,11 @@ class SPFRule extends Rule
     /**
      * @var string
      */
-    protected $error = null;
+    protected $error;
     /**
      * @var string
      */
-    protected $result = null;
+    protected $result;
     /**
      * @var EmailParser
      */
@@ -42,24 +42,24 @@ class SPFRule extends Rule
     public function __construct(DNSRecordGetter $dnsRecordGetter, EmailParser $emailParser)
     {
         $this->dnsRecordGetter = $dnsRecordGetter;
-        $this->spfChecker = new SPFCheck($this->dnsRecordGetter);
-        $this->emailParser = $emailParser;
+        $this->spfChecker      = new SPFCheck($this->dnsRecordGetter);
+        $this->emailParser     = $emailParser;
     }
 
     /**
      * Determine if the validation rule passes.
      *
      * @param string $attribute
-     * @param mixed  $value
      *
      * @return bool
      */
     public function passes($attribute, $value)
     {
-        $parts = $this->emailParser->parse((string) $value);
+        $parts = $this->emailParser->parse((string)$value);
 
         if (!isset($parts['domain'])) {
             $this->error = sprintf('Could not parse the domain from "%s" while trying to validate SPF', $value);
+
             return false;
         }
 
@@ -85,21 +85,25 @@ class SPFRule extends Rule
                     'SPF configured incorrectly for "%s", spam filters will block mail from this account',
                     $this->options
                 );
+
             case SPFCheck::RESULT_SOFTFAIL:
                 return sprintf(
                     'SPF has not been configured (correctly) for "%s", spam filters will most likely block mail from this account',
                     $this->options
                 );
+
             case SPFCheck::RESULT_NEUTRAL:
             case SPFCheck::RESULT_NONE:
                 return sprintf(
                     'It is unknown whether SPF is configured correctly for "%s", spam filter might block mail from this account',
                     $this->options
                 );
+
             case SPFCheck::RESULT_PERMERROR:
             case SPFCheck::RESULT_TEMPERROR:
             case SPFCheck::RESULT_DEFINITIVE_PERMERROR:
                 return sprintf('Could not verify SPF settings for "%s"', $this->options);
+
             default:
                 return 'Unknown SPF validation error';
         }
